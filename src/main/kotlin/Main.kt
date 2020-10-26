@@ -12,7 +12,6 @@ fun main() {
         val result = (sum - regularDiscount).toInt()
         println("Сумма заказа со скидками: $result руб.")
     } else {
-        val result = (price - standartDiscount)
         println("Сумма заказа со скидками: $sum руб.")
     }
 
@@ -26,6 +25,9 @@ private fun discount(price: Int, standartDiscount: Int, fivePercentDiscount: Int
         }
         price in 1001..10_000 -> {
             price - standartDiscount
+        }
+        price > 10_000 -> {
+            price - fivePercentDiscount
         }
         else -> price
     }
